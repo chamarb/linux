@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Authenticate</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/login.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to bottom, #1c2331, #354a5f);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-wrapper {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 60px;
+            max-width: 500px;
+            width: 100%;
+        }
+        .logo {
+            width: 60%;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #1c2331;
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        label {
+            color: #1c2331;
+            font-size: 18px;
+            display: block;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #1c2331;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #354a5f;
+        }
+        .error-message {
+            color: red;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-wrapper">
+       <h2>Authentication</h2>
+        <form  action="/login" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <div class="error-message" id="error-message"></div>
+            <input type="submit" value="Login">
+        </form>
+        <div class="footer">
+            <a href="#">Forgot your password?</a>
+            <span>|</span>
+            <a href="#">Create an account</a>
+        </div>
+        <p style="color: red;">{{error_auth}}</p>
+    </div>
+</body>
+
+</html>
+
+
+
+    
