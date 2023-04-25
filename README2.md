@@ -10,6 +10,7 @@ $ docker images | head
 Pour déployer une application Flask comme un service sous Linux :
 ## Activez le service et démarrez-le en utilisant les commandes suivantes :
 ```shell
+$sudo nano /etc/systemd/system/flaskapp.service
 $ sudo systemctl daemon-reload
 $ sudo systemctl start myflaskapp
 $ sudo systemctl enable myflaskapp
