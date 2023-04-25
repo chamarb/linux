@@ -1,7 +1,11 @@
 import datetime
 import hashlib
 import zipfile
-from click import Path
+from pathlib import Path
+import datetime as dt
+import os
+import pwd
+import logging
 from flask import(
     Flask,
     request,
@@ -9,11 +13,9 @@ from flask import(
     redirect,
     session,
     url_for,
-    send_file
+    send_file,
+    abort
 )
-import os
-import pwd
-import logging
 
 
 app = Flask(__name__)
@@ -190,10 +192,7 @@ def get_space_used():
 
 ##########Files handler
 
-from flask import Flask, render_template, abort, safe_join, send_file
-from pathlib import Path
-import os
-import datetime as dt
+
 
 FolderPath = os.path.expanduser("~")
 
